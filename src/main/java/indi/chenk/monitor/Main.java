@@ -22,6 +22,7 @@ public class Main {
 		if (null == args || args.length == 0) {
 			System.out
 					.println("Use \"java -jar monitor.jar --help\" for more information.");
+			System.exit(0);
 		}
 		Main main = new Main();
 		main.parseArgs(args);
@@ -34,10 +35,10 @@ public class Main {
 				_showUsage = true;
 				break;
 			}
-			if ("--url".startsWith(arg) ) {
+			if (arg.startsWith("--url") ) {
 				_url = arg.split("=")[1];
 			}
-			if ("--timeout".startsWith(arg) ) {
+			if (arg.startsWith("--timeout") ) {
 				try {
 					_timeout = Integer.valueOf(arg.split("=")[1]) * 1000;
 				}catch(Exception e) {

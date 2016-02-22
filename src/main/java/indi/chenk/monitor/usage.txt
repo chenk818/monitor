@@ -1,4 +1,4 @@
-Usage: java -jar key.jar [options...] 
+Usage: java -jar monitor.jar [options...] 
 
 Command Line Options:
   --help           This help / usage information.
