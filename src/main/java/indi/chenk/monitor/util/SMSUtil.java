@@ -27,33 +27,18 @@ public class SMSUtil {
 	}
 
 	/**
-	 * 向指定号码发送验证码
+	 * 向指定号码发送信息
 	 * 
 	 * @param to
 	 *            接收的手机号
-	 * @param key
-	 *            验证码
-	 * @param minutes
-	 *            限定时间
+	 * @param datas
+	 *            发送的信息，对应模板里面的变量，按顺序对应
+	 
 	 * @return
 	 */
-	public static boolean sendSMS(String to, String key, int minutes) {
-		String[] data = { key, "" + minutes };
+	public static boolean sendSMS(String to, String... datas) {
 		HashMap<String, Object> result = restAPI.sendTemplateSMS(to,
-				templateId, data);
-		if ("000000".equals(result.get("statusCode"))) {
-			return true;
-		} else {
-			logger.error("错误码=" + result.get("statusCode") + " 错误信息= "
-					+ result.get("statusMsg"));
-			return false;
-		}
-	}
-	
-	public static boolean sendSMS(String tempId,String to, String key, int minutes) {
-		String[] data = { key, "" + minutes };
-		HashMap<String, Object> result = restAPI.sendTemplateSMS(to,
-				tempId, data);
+				templateId, datas);
 		if ("000000".equals(result.get("statusCode"))) {
 			return true;
 		} else {

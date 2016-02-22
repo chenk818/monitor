@@ -1,0 +1,15 @@
+Usage: java -jar key.jar [options...] 
+
+Command Line Options:
+  --help           This help / usage information.
+  
+  --url=<check url>       Specify the check url
+  --timeout=<timeout>     Specify the timeout,with second unit,default to 2.
+  --config=<config path>  Specify the config file  path.You could specify the option in this file as key=value format
+  --notify=<notify type>  Specify the notify way.Just support SMS now.
+  --receivers             Specify the receivers
+   --sms_account=<>           The account for yuntongxun
+   --sms_token=<>             The token for yuntongxun
+   --sms_appid=<>             The appid for yuntongxun
+   --sms_ip=<>                The server ip for yuntongxun
+   --sms_port=<>              The server port for yuntongxun
